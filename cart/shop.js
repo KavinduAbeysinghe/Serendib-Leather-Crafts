@@ -92,7 +92,7 @@ buyBtn.addEventListener("click", () => {
       localStorage.setItem("email", email.value);
       saveToLocalStorage();
       alert("Order placed successfully");
-      window.location.href = "payment.html";
+      document.location.href = "payment.html";
     });
   }
 });

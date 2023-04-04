@@ -62,7 +62,12 @@ body {
   padding: 20px 20px;
   text-decoration: none;
   color: darkgray;
-  transition: all 0.3s ease-in;
+  /* transition: all 0.3s ease-in; */
+  font-weight: 500;
+}
+
+.header li a:hover {
+  border-bottom: 3px solid #723e31;
 }
 
 .header li a:hover,
@@ -144,7 +149,7 @@ body {
   top: 0;
 }
 
-@media (min-width: 48em) {
+@media (min-width: 820px) {
   .header li {
     float: left;
   }
