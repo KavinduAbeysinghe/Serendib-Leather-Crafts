@@ -5,7 +5,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   scroll-behavior: smooth;
 }
 
@@ -51,7 +51,7 @@ body {
 }
 
 .header {
-  background-color: white;
+  background-color: #f4f4f4;
   box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
   position: fixed;
   width: 100%;
@@ -59,7 +59,6 @@ body {
   top: 0px;
   right: 0px;
   left: 0px;
-  height: 60px;
 }
 
 .header ul {
@@ -75,13 +74,13 @@ body {
   display: block;
   padding: 20px 20px;
   text-decoration: none;
-  color: gray;
-  font-weight: 600;
-  /* transition: all 0.3s ease-in; */
+  color: darkgray;
+  font-weight: 500;
 }
 
-.header li a:hover {
+.active-nav {
   border-bottom: 3px solid #723e31;
+  color: #723e31;
 }
 
 .header li a:hover,
@@ -163,7 +162,7 @@ body {
   top: 0;
 }
 
-@media (min-width: 48em) {
+@media (min-width: 820px) {
   .header li {
     float: left;
   }
@@ -182,7 +181,7 @@ body {
 
 .page-navbar {
   display: flex;
-  margin-top: 60px;
+  margin-top: 74px;
   justify-content: center;
 }
 
@@ -345,4 +344,101 @@ section {
 .reveal.active {
   transform: translateY(0px);
   opacity: 1;
+}
+
+/* Footer */
+
+footer {
+  position: absolute;
+  margin-bottom: 0;
+  left: 0;
+  right: 0;
+  background: #111;
+  height: auto;
+  width: 100%;
+  padding-top: 40px;
+  color: #fff;
+  margin-top: 50px;
+  font-family: "Poppins", sans-serif;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.footer-content h3 {
+  font-family: "Poiret One", cursive;
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  line-height: 3rem;
+}
+
+.footer-content p {
+  max-width: 500px;
+  margin: 10px auto;
+  line-height: 28px;
+  font-size: 14px;
+}
+
+.editorButton {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-family: "Poppins", sans-serif;
+}
+
+.editorButton:hover {
+  background: #000;
+  color: #fcfcfc;
+  cursor: pointer;
+}
+
+.socials {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0 3rem 0;
+}
+
+.socials li {
+  margin: 0 10px;
+}
+
+.socials a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.socials a i {
+  font-size: 1.1rem;
+  transition: color 0.4s ease;
+}
+
+.socials a:hover i {
+  color: aqua;
+}
+
+.footer-bottom {
+  background: #000;
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+  word-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.footer-bottom span {
+  text-transform: uppercase;
+  opacity: 0.4;
+  font-weight: 200;
 }

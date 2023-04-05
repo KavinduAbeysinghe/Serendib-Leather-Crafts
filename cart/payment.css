@@ -1,9 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poiret+One&display=swap");
 
+.logo-img {
+  width: 25px;
+  height: auto;
+}
+
 body {
+  scroll-behavior: smooth;
   position: relative;
   font-family: "Lato", sans-serif;
+  box-sizing: border-box;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .logo {
@@ -58,7 +67,12 @@ body {
   padding: 20px 20px;
   text-decoration: none;
   color: darkgray;
-  transition: all 0.3s ease-in;
+  font-weight: 500;
+}
+
+.active-nav {
+  border-bottom: 3px solid #723e31;
+  color: #723e31;
 }
 
 .header li a:hover,
@@ -140,7 +154,7 @@ body {
   top: 0;
 }
 
-@media (min-width: 48em) {
+@media (min-width: 820px) {
   .header li {
     float: left;
   }
@@ -436,4 +450,101 @@ body {
     opacity: 1;
     transform: translate(-50%, -50%);
   }
+}
+
+/* Footer */
+
+footer {
+  position: absolute;
+  margin-bottom: 0;
+  left: 0;
+  right: 0;
+  background: #111;
+  height: auto;
+  width: 100%;
+  padding-top: 40px;
+  color: #fff;
+  margin-top: 50px;
+  font-family: "Poppins", sans-serif;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.footer-content h3 {
+  font-family: "Poiret One", cursive;
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  line-height: 3rem;
+}
+
+.footer-content p {
+  max-width: 500px;
+  margin: 10px auto;
+  line-height: 28px;
+  font-size: 14px;
+}
+
+.editorButton {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-family: "Poppins", sans-serif;
+}
+
+.editorButton:hover {
+  background: #000;
+  color: #fcfcfc;
+  cursor: pointer;
+}
+
+.socials {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0 3rem 0;
+}
+
+.socials li {
+  margin: 0 10px;
+}
+
+.socials a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.socials a i {
+  font-size: 1.1rem;
+  transition: color 0.4s ease;
+}
+
+.socials a:hover i {
+  color: aqua;
+}
+
+.footer-bottom {
+  background: #000;
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+  word-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.footer-bottom span {
+  text-transform: uppercase;
+  opacity: 0.4;
+  font-weight: 200;
 }

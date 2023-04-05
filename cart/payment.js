@@ -188,3 +188,8 @@ contactDetailsPopup.addEventListener("submit", (e) => {
   e.preventDefault();
   contactDetailsPopup.style.display = "none";
 });
+
+// Directing to Editor Page
+document.querySelector(".editorButton").addEventListener("click", () => {
+  document.location.href = "../editor-kavindu/editor.html";
+});

@@ -73,3 +73,8 @@ document.querySelector("#painting").addEventListener("click", () => {
 document.querySelector("#stamping").addEventListener("click", () => {
   document.location.href = "";
 });
+
+// Directing to editor page
+document.querySelector(".editorButton").addEventListener("click", () => {
+  document.location.href = "../editor-kavindu/editor.html";
+});

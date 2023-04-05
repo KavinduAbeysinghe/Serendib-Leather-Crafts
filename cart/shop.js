@@ -4,6 +4,12 @@ let closeCart = document.querySelector("#close-cart");
 
 var cartIndicator = document.getElementById("cartItemIndicator");
 
+let clearBtn = document.querySelector(".btn-clear");
+
+let buyBtn = document.querySelector(".btn-buy");
+
+let contactPopup = document.getElementById("contactPopup");
+
 var itemCount = 0;
 
 var cartItems;
@@ -61,35 +67,24 @@ function ready() {
   }
 }
 
-//   Buy Button Work
-let buyBtn = document.querySelector(".btn-buy");
-
-let contactPopup = document.getElementById("contactPopup");
-
+// Open Contact PopUp
 document.getElementById("cancelBtn2").addEventListener("click", () => {
   contactPopup.style.display = "none";
 });
 
+// Close Contact PopUp
 document.getElementById("closeContactPopup").addEventListener("click", () => {
   contactPopup.style.display = "none";
 });
 
+clearCart();
+
+// Buy Btn Functionality
 buyBtn.addEventListener("click", () => {
-  let items = cartItems.getElementsByClassName("cart-box");
-  if (items.length === 0) {
-    buyBtn.disabled = true;
-  } else {
-    buyBtn.disabled = false;
+  let cartContent = document.querySelector(".cart-content");
+  if (cartContent.childNodes.length !== 0) {
     contactPopup.style.display = "initial";
     document.getElementById("contactPopup").addEventListener("submit", () => {
-      let name = document.querySelector("#personName");
-      let email = document.querySelector("#email");
-
-      let cartPrice = document.querySelector(".total-price");
-      localStorage.setItem("cartPrice", cartPrice.innerText);
-
-      localStorage.setItem("name", name.value);
-      localStorage.setItem("email", email.value);
       saveToLocalStorage();
       alert("Order placed successfully");
       document.location.href = "payment.html";
@@ -132,6 +127,8 @@ class="cart-img"
     .addEventListener("change", quantityChanged);
 
   itemCount++;
+
+  clearBtn.disabled = false;
 }
 
 // Quantity Changes
@@ -169,18 +166,21 @@ function updateTotal() {
   document.getElementsByClassName("total-price")[0].innerText = "$" + total;
 }
 
-let clearBtn = document
-  .getElementsByClassName("btn-clear")[0]
-  .addEventListener("click", () => {
-    let items = cartItems.getElementsByClassName("cart-box");
-    console.log(items.length);
-    for (var i = items.length - 1; i >= 0; i--) {
-      items[i].remove();
-      updateTotal();
-      // items[i].parentNode.removeChild(items[i]);
-    }
-    console.log(items);
-  });
+function clearCart() {
+  let cartContent = document.querySelector(".cart-content");
+  if (cartContent.childNodes.length === 0) clearBtn.disabled = true;
+  document
+    .getElementsByClassName("btn-clear")[0]
+    .addEventListener("click", () => {
+      let items = cartItems.getElementsByClassName("cart-box");
+      for (var i = items.length - 1; i >= 0; i--) {
+        items[i].remove();
+        updateTotal();
+      }
+      itemCount = 0;
+      cartIndicator.innerText = itemCount;
+    });
+}
 
 function saveToLocalStorage() {
   let imgURLs = [];
@@ -193,19 +193,35 @@ function saveToLocalStorage() {
     imgURLs.push(imgs[i].src);
   }
   localStorage.setItem("imgURLs", JSON.stringify(imgURLs));
+
   let names = cartItems.getElementsByClassName("cart-product-title");
   for (var i = 0; i < names.length; i++) {
     itemNames.push(names[i].innerText);
   }
   localStorage.setItem("itemNames", JSON.stringify(itemNames));
+
   let prices = cartItems.getElementsByClassName("cart-price");
   for (var i = 0; i < prices.length; i++) {
     itemPrices.push(prices[i].innerText);
   }
   localStorage.setItem("itemPrices", JSON.stringify(itemPrices));
+
   let itemQtys = cartItems.getElementsByClassName("cart-quantity");
   for (var i = 0; i < itemQtys.length; i++) {
     itemQty.push(itemQtys[i].value);
   }
   localStorage.setItem("itemQty", JSON.stringify(itemQty));
+
+  let name = document.querySelector("#personName");
+  let email = document.querySelector("#email");
+  let cartPrice = document.querySelector(".total-price");
+
+  localStorage.setItem("cartPrice", cartPrice.innerText);
+  localStorage.setItem("name", name.value);
+  localStorage.setItem("email", email.value);
 }
+
+const editorBtn = document.querySelector(".editorButton");
+editorBtn.addEventListener("click", () => {
+  document.location.href = "../editor-kavindu/editor.html";
+});
