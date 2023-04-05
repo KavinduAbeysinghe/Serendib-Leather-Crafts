@@ -555,6 +555,10 @@ body {
 /* Footer */
 
 footer {
+  position: absolute;
+  margin-bottom: 0;
+  left: 0;
+  right: 0;
   background: #111;
   height: auto;
   width: 100%;
