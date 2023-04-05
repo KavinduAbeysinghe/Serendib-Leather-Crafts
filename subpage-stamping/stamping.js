@@ -56,24 +56,6 @@ window.addEventListener("scroll", () => {
   });
 });
 
-// Directing to the relavant sub pages.
-
-document.querySelector("#sculpting").addEventListener("click", () => {
-  document.location.href = "../subpage-sculpting/sub1.html";
-});
-
-document.querySelector("#carving").addEventListener("click", () => {
-  document.location.href = "";
-});
-
-document.querySelector("#painting").addEventListener("click", () => {
-  document.location.href = "../subpage-painting/subpaintings.html";
-});
-
-document.querySelector("#stamping").addEventListener("click", () => {
-  document.location.href = "../subpage-stamping/stamping.html";
-});
-
 // Directing to editor page
 document.querySelector(".editorButton").addEventListener("click", () => {
   document.location.href = "../editor-kavindu/editor.html";
