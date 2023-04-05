@@ -67,7 +67,7 @@ body {
 }
 
 .header li a:hover {
-  border-bottom: 3px solid #723e31;
+  /* border-bottom: 3px solid #723e31; */
 }
 
 .header li a:hover,
@@ -544,4 +544,9 @@ body {
 .error-msg {
   font-size: 13px;
   color: red;
+}
+
+.active-nav {
+  border-bottom: 3px solid #723e31;
+  color: #723e31;
 }
