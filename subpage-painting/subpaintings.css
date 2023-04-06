@@ -5,7 +5,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   scroll-behavior: smooth;
 }
 
@@ -51,7 +51,7 @@ body {
 }
 
 .header {
-  background-color: white;
+  background-color: #f4f4f4;
   box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
   position: fixed;
   width: 100%;
@@ -74,13 +74,13 @@ body {
   display: block;
   padding: 20px 20px;
   text-decoration: none;
-  color: gray;
-  font-weight: 600;
-  /* transition: all 0.3s ease-in; */
+  color: darkgray;
+  font-weight: 500;
 }
 
-.header li a:hover {
+.active-nav {
   border-bottom: 3px solid #723e31;
+  color: #723e31;
 }
 
 .header li a:hover,
@@ -162,7 +162,7 @@ body {
   top: 0;
 }
 
-@media (min-width: 48em) {
+@media (min-width: 820px) {
   .header li {
     float: left;
   }
@@ -181,7 +181,7 @@ body {
 
 .page-navbar {
   display: flex;
-  margin-top: 60px;
+  margin-top: 74px;
   justify-content: center;
 }
 
