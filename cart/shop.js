@@ -60,8 +60,14 @@ function ready() {
       var productImages = event.target.parentElement.parentElement;
       var productImg =
         productImages.getElementsByClassName("product-img")[0].src;
+
+      // Function that used to map the product details to the template literal
       addProductToCart(title, price, productImg);
+
+      // Updates the total after adding the item to cart
       updateTotal();
+
+      // Updates the text which indicates the no of products in the cart
       cartIndicator.innerText = itemCount;
     });
   }
@@ -104,6 +110,7 @@ function addProductToCart(title, price, productImg) {
     }
   }
 
+  // Template Literal of cart item
   var cartBoxContent = `<img
 src="${productImg}"
 alt=""

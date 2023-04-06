@@ -15,7 +15,7 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background: url(background.jpg) no-repeat;
+  background: url("../images/editorbg.jpg") no-repeat;
   background-size: cover;
   background-position: center;
 }

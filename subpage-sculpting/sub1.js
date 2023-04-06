@@ -55,3 +55,7 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
+document.querySelector(".editorButton").addEventListener("click", () => {
+  document.location.href = "../editor-kavindu/editor.html";
+});

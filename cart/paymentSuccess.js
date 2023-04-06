@@ -1,4 +1,4 @@
-var count = 10; // set the countdown time in seconds
+var count = 10;
 
 var countdown = setInterval(function () {
   count--;
@@ -7,6 +7,6 @@ var countdown = setInterval(function () {
 
   if (count == 0) {
     clearInterval(countdown);
-    window.location.href = "shop.html"; // redirect to second page
+    window.location.href = "shop.html";
   }
 }, 1000);

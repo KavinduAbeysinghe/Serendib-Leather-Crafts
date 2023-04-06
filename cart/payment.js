@@ -21,6 +21,7 @@ emailTxt.innerText = localStorage.getItem("email");
 personName.value = localStorage.getItem("name");
 email.value = localStorage.getItem("email");
 
+// Changes the card image based on the seclection of card type
 cardType.addEventListener("change", () => {
   const selectedValue = cardType.value;
   if (selectedValue === "visa") {
@@ -35,6 +36,7 @@ cardType.addEventListener("change", () => {
   }
 });
 
+// Saving the arrays retrieved from localstrage in constants
 const imgURLs = JSON.parse(localStorage.getItem("imgURLs"));
 const names = JSON.parse(localStorage.getItem("itemNames"));
 const prices = JSON.parse(localStorage.getItem("itemPrices"));
@@ -62,7 +64,6 @@ class="cart-img"
 </div>`;
 
   cartItem.innerHTML = cartItemContent;
-  // console.log(cartItem);
   cart.append(cartItem);
 }
 
@@ -113,16 +114,19 @@ form.addEventListener("submit", (e) => {
 
 let billingAddressPopup = document.getElementById("addressPopup");
 
+// Opens billing address form
 let addressEditBtn = document.getElementById("addressEditBtn");
 addressEditBtn.addEventListener("click", () => {
   billingAddressPopup.style.display = "initial";
 });
 
+// Close billing address form
 let closeBillingPopup = document.getElementById("closeBillingPopup");
 closeBillingPopup.addEventListener("click", () => {
   billingAddressPopup.style.display = " none";
 });
 
+// Close billing address form
 let cancelBillingPopup = document.getElementById("cancelBtn");
 cancelBillingPopup.addEventListener("click", () => {
   billingAddressPopup.style.display = " none";
@@ -137,6 +141,7 @@ let stateRegion = document.getElementById("stateRegion");
 let postalZipCode = document.getElementById("postalZipCode");
 let country = document.getElementById("country");
 
+// Mapping the inputs in the address form into innerText of billingAddressTxt
 let billingAddressForm = document.getElementById("addressForm");
 billingAddressForm.addEventListener("submit", (e) => {
   let billingAddressDetails = [
@@ -161,24 +166,26 @@ billingAddressForm.addEventListener("submit", (e) => {
   billingAddressPopup.style.display = " none";
 });
 
-// Contact Form Validation
-
+// Open contact detail form
 let editContactDetailsBtn = document.getElementById("contactEditBtn");
 let contactDetailsPopup = document.getElementById("contactPopup");
 editContactDetailsBtn.addEventListener("click", () => {
   contactDetailsPopup.style.display = "initial";
 });
 
+// Close contact detail form
 let closeContactPopUp = document.getElementById("closeContactPopup");
 closeContactPopUp.addEventListener("click", () => {
   contactDetailsPopup.style.display = "none";
 });
 
+// Close contact detail form
 let cancelContactPopUp = document.getElementById("cancelBtn2");
 cancelContactPopUp.addEventListener("click", () => {
   contactDetailsPopup.style.display = "none";
 });
 
+// Contact Form Validation
 contactDetailsPopup.addEventListener("submit", (e) => {
   nameTxt.innerText = personName.value;
   emailTxt.innerText = email.value;
